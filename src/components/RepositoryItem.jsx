@@ -12,31 +12,31 @@ const styles = StyleSheet.create({
     statsBarFlex: {
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-evenly"
+        justifyContent: "space-evenly",
     },
     descriptionContainer: {
         display: "flex",
         flexDirection: "row",     
     },
     descriptionText: {
-        marginBottom: 10
+        marginBottom: 10,
     },
     languageBadge: {
         padding: 5,
         alignSelf: "flex-start",
         backgroundColor: theme.colors.primary,
-        borderRadius: 5
+        borderRadius: 5,
     },
     tinyAvatar: {
         width: 50,
         height: 50,
-        borderRadius: 5
+        borderRadius: 5,
     },
     item: {
         padding: 10,
         flexShrink: 1,
-        justifyContent: "flex-start"
-    }
+        justifyContent: "flex-start",
+    },
     
   });
 
@@ -70,7 +70,7 @@ const RepositoryItem = ({item}) => {
                 <RepositoryStat number={item.ratingAverage} label="Rating"/>
             </View>
         </View>
-    )
+    );
 }
 
 export default RepositoryItem;

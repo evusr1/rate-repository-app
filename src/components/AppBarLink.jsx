@@ -5,8 +5,8 @@ import Text from './Text';
 
 const styles = StyleSheet.create({
     appBarItem: {
-        padding: 15
-    }
+        padding: 15,
+    },
 })
 
 const AppBarLink = ({to, label}) => {
@@ -18,7 +18,7 @@ const AppBarLink = ({to, label}) => {
                 </Text> 
             </Link>
         </View>
-    )
+    );
 };
 
 export default AppBarLink;

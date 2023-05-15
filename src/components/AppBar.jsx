@@ -21,7 +21,7 @@ const AppBar = () => {
             <AppBarLink to="/signin" label="Sign In"/>
         </ScrollView>
     </View>
-  )
+  );
 };
 
 export default AppBar;

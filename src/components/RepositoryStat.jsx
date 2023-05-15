@@ -15,7 +15,7 @@ const RepositoryStat = ({label, number}) => {
             <Text color="textPrimary" fontWeight="bold">{numberShortened}</Text>
             <Text color="textSecondary">{label}</Text>
         </View>
-    )
+    );
 }
 
 export default RepositoryStat;
