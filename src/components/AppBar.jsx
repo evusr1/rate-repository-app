@@ -3,6 +3,7 @@ import Constants from 'expo-constants';
 
 import theme from '../theme';
 import AppBarLink from './AppBarLink';
+import useMe from '../hooks/useMe';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,11 +15,20 @@ const styles = StyleSheet.create({
 });
 
 const AppBar = () => {
+  const { me, loading} = useMe();
+  
+  const user = !loading
+    ? me
+    ? me.username
+    : null
+    : null
+
   return (
     <View style={styles.container}>
         <ScrollView horizontal>
             <AppBarLink to="/" label="Repositories"/>
-            <AppBarLink to="/signin" label="Sign In"/>
+            {!user && <AppBarLink to="/signin" label="Sign In"/>}
+            {user && <AppBarLink to="/logout" label="Logout"/>}
         </ScrollView>
     </View>
   );
