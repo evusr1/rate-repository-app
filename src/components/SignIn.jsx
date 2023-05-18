@@ -7,7 +7,7 @@ import * as yup from 'yup';
 import FormikTextInput from './FormikTextInput';
 import theme from '../theme';
 import Button from './Button';
-import useSignIn from '../hooks/useSignin';
+import useSignIn from '../hooks/useSignIn';
 
 const styles = StyleSheet.create({
   container: {
