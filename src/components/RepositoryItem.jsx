@@ -1,14 +1,16 @@
 import { View, StyleSheet, Image } from "react-native";
+import { Linking } from "react-native";
 
 import Text from "./Text";
 import theme from "../theme";
 import RepositoryStat from "./RepositoryStat";
+import Button from "./Button";
+import Container from "./Container";
+import TextHeading from "./TextHeading";
+import TextSecondary from "./TextSecondary";
+
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: theme.colors.backgroundSecondary,
-        padding: 10,
-    },
     statsBarFlex: {
         display: "flex",
         flexDirection: "row",
@@ -38,11 +40,11 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
     },
     
-  });
+});
 
-const RepositoryItem = ({item}) => {
+const RepositoryItem = ({item, showUrlButton}) => {
     return (
-        <View style={styles.container} testID="repositoryItem">
+        <Container testID="repositoryItem">
             <View style={styles.descriptionContainer}>
                 <View style={styles.item}>
                     <Image
@@ -54,8 +56,8 @@ const RepositoryItem = ({item}) => {
                 </View>
                 <View style={styles.item}>
                     <View style={styles.descriptionText}>
-                        <Text fontSize="subheading" fontWeight="bold">{item.fullName}</Text>
-                        <Text color="textSecondary">{item.description}</Text>
+                        <TextHeading>{item.fullName}</TextHeading>
+                        <TextSecondary>{item.description}</TextSecondary>
                     </View>
             
                     <View style={styles.languageBadge}>
@@ -69,7 +71,13 @@ const RepositoryItem = ({item}) => {
                 <RepositoryStat number={item.reviewCount} label="Reviews"/>
                 <RepositoryStat number={item.ratingAverage} label="Rating"/>
             </View>
-        </View>
+            {
+                showUrlButton &&
+                    <View>
+                        <Button label="Open in GitHub" onPress={() => Linking.openURL(item.url)}/>
+                    </View>
+            }
+        </Container>
     );
 }
 

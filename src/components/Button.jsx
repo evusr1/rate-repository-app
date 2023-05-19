@@ -15,14 +15,14 @@ const styles = StyleSheet.create({
   },
 });
 
-const Button = ({ onSubmit, style, label, ...props }) => {
+const Button = ({ style, label, ...props }) => {
   const buttonStyle = [
     style,
     styles.button
   ];
 
   return (
-    <Pressable onPress={onSubmit} style={buttonStyle} {...props}>
+    <Pressable style={buttonStyle} {...props}>
       <Text color="invert">{label}</Text>
     </Pressable>
   );
