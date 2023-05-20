@@ -1,7 +1,7 @@
 import { Link } from 'react-router-native';
 import { StyleSheet, View } from 'react-native';
 
-import Text from './Text';
+import Text from '../Text';
 
 const styles = StyleSheet.create({
     appBarItem: {
