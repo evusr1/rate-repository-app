@@ -10,6 +10,7 @@ import Logout from './Logout';
 import RepositoryView from './RepositoryView';
 import CreateReview from './CreateReview';
 import SignUp from './SignUp';
+import MyReviewView from './MyReviewView';
 
 const styles = StyleSheet.create({
   container: {
@@ -30,6 +31,7 @@ const Main = () => {
         <Route path="/signup" element={<SignUp/>} exact />     
         <Route path="/logout" element={<Logout/>} exact />   
         <Route path="/review" element={<CreateReview/>} exact />
+        <Route path="/myreview" element={<MyReviewView/>} exact />
         <Route path="/repo/:id" element={<RepositoryView/>}/>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

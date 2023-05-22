@@ -31,7 +31,7 @@ const RepositoryListHeader = ({sort, setSort, search, setSearch}) => {
 } 
 
 
-export const RepositoryListContainer = ({repositories, navigate, sort, setSort, search, setSearch}) => {
+export const RepositoryListContainer = ({repositories, navigate, sort, setSort, search, setSearch, onEndReach}) => {
   const repositoryNodes = repositories
     ? repositories.edges.map(edge => edge.node)
     : [] ;
@@ -41,6 +41,8 @@ export const RepositoryListContainer = ({repositories, navigate, sort, setSort, 
     <FlatList
       data={repositoryNodes}
       ItemSeparatorComponent={ItemSeparator}
+      onEndReached={onEndReach}
+      onEndReachedThreshold={0.5}
       ListHeaderComponent={
         <RepositoryListHeader
           setSort={setSort}
@@ -67,11 +69,15 @@ const RepositoryList = () => {
   
   const navigate = useNavigate();
 
-  const { repositories } = useRepositories(sort, searchDebounce);
+  const { repositories, fetchMore } = useRepositories(sort, searchDebounce, 8);
 
+  const onEndReach = () => {
+    fetchMore();
+  };
 
   return <RepositoryListContainer
     repositories={repositories}
+    onEndReach={onEndReach}
     navigate={navigate}
     setSort={setSort}
     sort={sort}

@@ -29,6 +29,7 @@ const AppBar = () => {
             <AppBarLink to="/" label="Repositories"/>
             
             {user && <AppBarLink to="/review" label="Create a review"/>}
+            {user && <AppBarLink to="/myreview" label="My Reviews"/>}
             {user && <AppBarLink to="/logout" label="Logout"/>}
 
             {!user && <AppBarLink to="/signin" label="Sign In"/>}

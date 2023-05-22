@@ -3,10 +3,13 @@ import { useQuery } from '@apollo/client'
 
 import { ME } from '../graphql/queries';
 
-const useMe = () => {
+const useMe = (includeReviews = false) => {
     const [ me, setMe] = useState();
     const { loading, data, refetch } = useQuery( ME, {
-        fetchPolicy: 'cache-and-network'
+        fetchPolicy: 'cache-and-network',
+        variables: {
+            includeReviews
+        }
     });
 
     useEffect(() => {

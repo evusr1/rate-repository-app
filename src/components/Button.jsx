@@ -5,7 +5,6 @@ import Text from './Text';
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: theme.colors.primary,
     display: 'flex',
     flexGrow: 1,
     alignItems: 'center',
@@ -13,12 +12,20 @@ const styles = StyleSheet.create({
     marginTop: 15,
     borderRadius: 5,
   },
+  buttonNormal: {
+    backgroundColor: theme.colors.primary,
+  },
+  buttonDanger: {
+    backgroundColor: theme.colors.error,
+  }
 });
 
-const Button = ({ style, label, ...props }) => {
+const Button = ({ style, label, color = 'normal',...props }) => {
   const buttonStyle = [
     style,
-    styles.button
+    styles.button,
+    color === 'danger' && styles.buttonDanger,
+    color === 'normal' && styles.buttonNormal
   ];
 
   return (

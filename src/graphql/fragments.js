@@ -27,3 +27,10 @@ export const REVIEW_DETAILS = gql`
         repositoryId
     }
 `
+export const PAGE_DETAILS = gql`
+    fragment PageDetails on PageInfo {
+        endCursor,
+        startCursor
+        hasNextPage
+    }
+`
