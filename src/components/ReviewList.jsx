@@ -87,7 +87,7 @@ const ReviewList = ({reviewNodes, headerComponent, reloadReviews, myReview, onEn
     const handleRemove = (id) => {
         Alert.alert('Delete Review', 'Are you sure you want to delete this review?', [      {
             text: 'Cancel',
-            style: 'cancel'
+            style: 'cancel',
           },
           {
             text: 'Delete',

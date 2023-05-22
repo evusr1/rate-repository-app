@@ -12,7 +12,7 @@ const useRepository = (id, first) => {
 
     const { loading, data, refetch, fetchMore } = useQuery( GET_REPOSITORY, {
         variables,
-        fetchPolicy: 'cache-and-network'
+        fetchPolicy: 'cache-and-network',
     });
 
     useEffect(() => {

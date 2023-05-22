@@ -73,7 +73,7 @@ const RepositoryList = () => {
 
   const onEndReach = () => {
     fetchMore();
-  };
+  }
 
   return <RepositoryListContainer
     repositories={repositories}

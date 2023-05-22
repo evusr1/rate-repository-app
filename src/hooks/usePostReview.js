@@ -10,7 +10,7 @@ const usePostReview = () => {
             ownerName,
             rating,
             repositoryName,
-            text
+            text,
         }
     });
 

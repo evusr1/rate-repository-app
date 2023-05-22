@@ -23,13 +23,13 @@ const useRepositories = (order = "LATEST", search, first) => {
     const variables = {
         ...SORT_BY[order],
         first,
-        searchKeyword: search !=='' ? search : undefined
+        searchKeyword: search !=='' ? search : undefined,
     }
 
 
     const { loading, data, refetch, fetchMore } = useQuery( GET_REPOSITORIES, {
         variables,
-        fetchPolicy: 'cache-and-network'
+        fetchPolicy: 'cache-and-network',
     });
 
     const handleFetchMore = () => {
@@ -41,7 +41,7 @@ const useRepositories = (order = "LATEST", search, first) => {
         fetchMore({
             variables: {
                 after: data.repositories.pageInfo.endCursor,
-                ...variables
+                ...variables,
             }
         })
     }

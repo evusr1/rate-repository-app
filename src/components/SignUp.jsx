@@ -29,7 +29,7 @@ const validationSchema = yup.object().shape({
   passwordConfirm: yup
     .string()
     .required('Confirm Password is required')
-    .oneOf([yup.ref('password'), null],"Passwords do not match")
+    .oneOf([yup.ref('password'), null],"Passwords do not match"),
 });
 
 export const SignUpContainer = ({onSubmit}) => {

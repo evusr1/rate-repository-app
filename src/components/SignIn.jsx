@@ -11,7 +11,7 @@ import Container from './Container';
 
 const initialValues = {
   username: '',
-  password: ''
+  password: '',
 };
 
 const validationSchema = yup.object().shape({
@@ -20,7 +20,7 @@ const validationSchema = yup.object().shape({
     .required('Username is required'),
     password: yup
     .string()
-    .required('Password is required')
+    .required('Password is required'),
 });
 
 export const SignInContainer = ({onSubmit}) => {
